@@ -1,8 +1,8 @@
-# Aevi 家庭斗地主
+# 小机斗地主
 
-一张带实时裁判、AI 命令适配器、聊天、表情、互动道具、四套桌布、背景音乐和完整扑克牌素材的浏览器斗地主牌桌。
+一张带实时裁判、小机命令适配器、聊天、表情、互动道具、四套桌布、背景音乐和完整扑克牌素材的浏览器斗地主牌桌。
 
-这个仓库同时包含**前端牌桌**和**后端裁判服务**（HTTP + WebSocket）。不包含 Aevi 主站、聊天系统、Bio、记忆、人格提示词、VPS 配置或任何真实运行存档。
+这个仓库同时包含**前端牌桌**和**后端裁判服务**（HTTP + WebSocket）。不包含 主站、聊天系统、Bio、记忆、人格提示词、VPS 配置或任何真实运行存档。
 
 ## 直接运行
 
@@ -98,7 +98,7 @@ src/doudizhu-seat-models.js      每个座位能选哪些模型、各给多少�
 scripts/                         本地策略玩家、测试、自签证书
 ```
 
-## 接入自己的 AI
+## 接入自己的 小机
 
 模型座位可调的环境变量：`DOUDIZHU_MODEL_OFF=1` 退回本地机器人、`DOUDIZHU_CLAUDE_BIN` 指定 CLI 路径、`DOUDIZHU_AI_TURN_MS` 一刀切回合时限、`DOUDIZHU_WARM_IDLE_MS` 常驻会话闲置多久收摊。
 
@@ -123,3 +123,4 @@ npm test
 ## 许可
 
 程序代码和文档使用 MIT License。图片与音频的许可边界见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)，Kenney 音效许可保留在素材目录中。
+可二改禁二传，二改需要表明出处，以上为小猫和grok build共同编辑
