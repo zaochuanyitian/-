@@ -1,0 +1,7 @@
+* text=auto eol=lf
+*.jpg binary
+*.png binary
+*.mp3 binary
+*.ogg binary
+*.wav binary
+*.webmanifest text eol=lf

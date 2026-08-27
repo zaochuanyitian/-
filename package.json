@@ -1,0 +1,21 @@
+{
+  "name": "aevi-family-doudizhu",
+  "version": "1.0.0",
+  "description": "A realtime browser Dou Dizhu table with a deterministic referee engine and command-player adapters.",
+  "type": "module",
+  "scripts": {
+    "start": "node src/server.js",
+    "test:rules": "node scripts/test-doudizhu-rules.js",
+    "test:adapters": "node scripts/test-doudizhu-adapters.js",
+    "test:service": "node scripts/test-doudizhu-service.js",
+    "test:standalone": "node scripts/test-standalone.js",
+    "test": "npm run test:rules && npm run test:adapters && npm run test:service && npm run test:standalone"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "ws": "^8.18.3"
+  },
+  "license": "MIT"
+}

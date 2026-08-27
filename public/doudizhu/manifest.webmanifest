@@ -1,0 +1,28 @@
+{
+  "id": "/doudizhu/",
+  "name": "Aevi 家庭斗地主",
+  "short_name": "斗地主",
+  "description": "带实时裁判的浏览器斗地主牌桌",
+  "lang": "zh-CN",
+  "start_url": "/doudizhu/",
+  "scope": "/doudizhu/",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#fdeef4",
+  "theme_color": "#f6d6e4",
+  "categories": ["games"],
+  "icons": [
+    {
+      "src": "/doudizhu/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/doudizhu/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

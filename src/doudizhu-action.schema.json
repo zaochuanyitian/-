@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "action": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": { "type": "string", "enum": ["bid", "play", "pass", "vote_dissolve", "chat"] },
+        "value": { "type": ["integer", "null"] },
+        "cards": { "type": "array", "items": { "type": "string" }, "maxItems": 20 },
+        "agree": { "type": ["boolean", "null"] }
+      },
+      "required": ["type", "value", "cards", "agree"]
+    },
+    "say": { "type": "string", "maxLength": 10 },
+    "emote": { "type": ["string", "null"] },
+    "prop": {
+      "anyOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "type": { "type": "string", "enum": ["tomato", "egg", "cheers"] },
+            "target": { "type": "string", "enum": ["aurex", "aevi", "vex", "juhua"] }
+          },
+          "required": ["type", "target"]
+        }
+      ]
+    }
+  },
+  "required": ["action", "say", "emote", "prop"]
+}

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+    <meta name="theme-color" content="#f6d6e4" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="斗地主" />
+    <title>Aevi 家庭斗地主</title>
+    <link rel="manifest" href="/doudizhu/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/doudizhu/icons/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/doudizhu/icons/icon-192.png" />
+    <link rel="stylesheet" href="/doudizhu/game.css?v=20260827pwa1" />
+  </head>
+  <body data-theme="jade">
+    <main id="game" aria-live="polite"></main>
+    <div id="effects" aria-hidden="true"></div>
+    <canvas id="particleCanvas" aria-hidden="true"></canvas>
+    <audio id="musicPlayer" preload="auto" loop></audio>
+    <audio id="soundBomb" preload="auto" src="/doudizhu/assets/sfx/bomb.wav"></audio>
+    <audio id="soundSelect" preload="auto" src="/doudizhu/assets/sfx/select.ogg"></audio>
+    <audio id="soundToast" preload="auto" src="/doudizhu/assets/sfx/toast.ogg"></audio>
+    <script defer src="/doudizhu/game.js?v=20260827pwa1"></script>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">菊花</title>
+  <desc id="desc">深色茶席上一朵安静的白色杭白菊</desc>
+  <defs>
+    <radialGradient id="bg" cx="46%" cy="38%" r="75%">
+      <stop offset="0" stop-color="#53615a"/>
+      <stop offset="1" stop-color="#18211e"/>
+    </radialGradient>
+    <radialGradient id="petal" cx="40%" cy="32%" r="75%">
+      <stop offset="0" stop-color="#fffdf2"/>
+      <stop offset=".68" stop-color="#e9e4cf"/>
+      <stop offset="1" stop-color="#bbb8a9"/>
+    </radialGradient>
+    <radialGradient id="gold" cx="42%" cy="36%" r="70%">
+      <stop offset="0" stop-color="#f6dc73"/>
+      <stop offset="1" stop-color="#a57922"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" rx="92" fill="url(#bg)"/>
+  <circle cx="256" cy="256" r="184" fill="#24342d" stroke="#87948b" stroke-width="8"/>
+  <g transform="translate(256 252)" fill="url(#petal)" stroke="#b9b5a6" stroke-width="4">
+    <ellipse rx="47" ry="150" transform="rotate(0)"/>
+    <ellipse rx="47" ry="150" transform="rotate(30)"/>
+    <ellipse rx="47" ry="150" transform="rotate(60)"/>
+    <ellipse rx="47" ry="150" transform="rotate(90)"/>
+    <ellipse rx="47" ry="150" transform="rotate(120)"/>
+    <ellipse rx="47" ry="150" transform="rotate(150)"/>
+  </g>
+  <g transform="translate(256 252)" fill="#f6f1de" stroke="#c7c1ab" stroke-width="3">
+    <ellipse rx="34" ry="112" transform="rotate(15)"/>
+    <ellipse rx="34" ry="112" transform="rotate(45)"/>
+    <ellipse rx="34" ry="112" transform="rotate(75)"/>
+    <ellipse rx="34" ry="112" transform="rotate(105)"/>
+    <ellipse rx="34" ry="112" transform="rotate(135)"/>
+    <ellipse rx="34" ry="112" transform="rotate(165)"/>
+  </g>
+  <circle cx="256" cy="252" r="62" fill="url(#gold)" stroke="#76571d" stroke-width="6"/>
+  <g fill="#f8e596">
+    <circle cx="236" cy="235" r="9"/><circle cx="260" cy="227" r="8"/><circle cx="281" cy="242" r="9"/>
+    <circle cx="229" cy="262" r="8"/><circle cx="255" cy="254" r="10"/><circle cx="278" cy="268" r="8"/>
+    <circle cx="250" cy="281" r="8"/>
+  </g>
+  <path d="M344 395c29-4 55 4 74 21-31 19-63 20-95 5" fill="none" stroke="#9dad9e" stroke-width="10" stroke-linecap="round"/>
+  <text x="256" y="470" fill="#f1eddf" font-size="34" font-family="PingFang SC, sans-serif" text-anchor="middle" letter-spacing="8">菊花</text>
+</svg>
