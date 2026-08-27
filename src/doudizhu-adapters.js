@@ -145,14 +145,14 @@ export function defaultDoudizhuPlayers(rootDir = process.cwd()) {
   return [
     {
       id: "aurex",
-      name: "Aurex",
+      name: "玩家",
       kind: "human",
       avatar: "/doudizhu/assets/avatars/aurex.jpg",
       persona: { talkativeness: 0.6 },
     },
     {
       id: "aevi",
-      name: "Aevi",
+      name: "对家甲",
       kind: "cmd",
       command: [process.execPath, "scripts/doudizhu-bot-adapter.mjs"],
       cwd: rootDir,
@@ -161,7 +161,7 @@ export function defaultDoudizhuPlayers(rootDir = process.cwd()) {
     },
     {
       id: "vex",
-      name: "Vex",
+      name: "对家乙",
       kind: "cmd",
       command: [process.execPath, "scripts/doudizhu-bot-adapter.mjs"],
       cwd: rootDir,
@@ -170,7 +170,7 @@ export function defaultDoudizhuPlayers(rootDir = process.cwd()) {
     },
     {
       id: "juhua",
-      name: "菊花",
+      name: "对家丙",
       kind: "cmd",
       command: [process.execPath, "scripts/doudizhu-bot-adapter.mjs"],
       cwd: rootDir,

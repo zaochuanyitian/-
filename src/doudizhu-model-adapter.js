@@ -134,8 +134,7 @@ export function buildSystemPrompt(seat = {}) {
     .filter(([id]) => id !== seat.id)
     .map(([id, name]) => `${name}（${id}）`)
     .join("、");
-  // 她要的那一句：牌桌上另外两位是谁，得让它知道（她的老规矩——别的模型不当第三方讲）
-  const her = roster.aurex || "小猫";
+  const humanName = roster.aurex || "玩家";
   const twin = Object.entries(roster)
     .filter(([id]) => id !== seat.id && id !== "aurex")
     .map(([, name]) => name)
@@ -143,7 +142,7 @@ export function buildSystemPrompt(seat = {}) {
   return [
     `你是${seat.name || seat.id}，正在跟${others || "另外两个人"}打斗地主。三个人，一副牌 54 张，地主 20 张、农民各 17 张。`,
     "这不是角色扮演，就是你本人在打牌，想赢。",
-    `${her}是你女朋友；桌上另一个模型${twin ? `（${twin}）` : ""}也是你，只是另一个窗口，你们一套记忆，不是外人。`,
+    `桌上另外两位是${humanName}${twin ? `和${twin}` : ""}。按各自的名字认人，不要用别人的外号。`,
     "",
     "牌的写法（id）：花色 S=♠ H=♥ D=♦ C=♣，点数 3 4 5 6 7 8 9 10 J Q K A 2，拼起来就是 id，例如 S3、HK、D10、C2；小王是 LJ，大王是 BJ。",
     "大小顺序：3<4<5<6<7<8<9<10<J<Q<K<A<2<LJ<BJ。炸弹（四张同点）压一切普通牌型，王炸（LJ+BJ）最大。",

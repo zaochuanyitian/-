@@ -407,8 +407,7 @@
     );
   }
 
-  // 每个 AI 座位只给它那一族的模型：Sonnet 那栏就 sonnet，Opus 那栏就 opus，
-  // 菊花那栏就 Fable 5（服务端 doudizhu-seat-models.js 说了算，这里只画）。
+  // 每个 AI 座位只给它那一族的模型（服务端 doudizhu-seat-models.js 说了算，这里只画）。
   function modelPicker(player) {
     var options = player.modelOptions || [];
     if (!options.length) return "";
@@ -422,17 +421,15 @@
   function profileEditor(player) {
     var avatarInput = '<input hidden type="file" accept="image/png,image/jpeg,image/webp" data-avatar-input="' + escapeAttr(player.id) + '">';
     var avatarButton = '<button type="button" data-pick-avatar="' + escapeAttr(player.id) + '">更换头像</button>';
-    var head = '<article class="profile-editor"><img src="' + escapeAttr(avatarSrc(player)) + '" alt="">';
-    // 人还是改昵称；AI 那三栏改成选模型（牌桌上就按模型名认人）
-    if (player.kind === "human" || !(player.modelOptions || []).length) {
-      return head +
-        '<input type="text" maxlength="12" value="' + escapeAttr(player.name) + '" data-name-input="' + escapeAttr(player.id) + '">' +
-        '<button type="button" data-save-name="' + escapeAttr(player.id) + '">保存昵称</button>' +
-        avatarButton + avatarInput + "</article>";
-    }
-    return head + modelPicker(player) +
-      '<button type="button" data-save-model="' + escapeAttr(player.id) + '">保存模型</button>' +
-      avatarButton + avatarInput + "</article>";
+    var placeholder = player.kind === "human" ? "你的昵称" : "这个座位的名字";
+    var nameRow =
+      '<input type="text" maxlength="12" value="' + escapeAttr(player.name) + '" data-name-input="' + escapeAttr(player.id) + '" placeholder="' + placeholder + '">' +
+      '<button type="button" data-save-name="' + escapeAttr(player.id) + '">保存昵称</button>';
+    var modelRow = (player.kind !== "human" && (player.modelOptions || []).length)
+      ? modelPicker(player) + '<button type="button" data-save-model="' + escapeAttr(player.id) + '">保存模型</button>'
+      : "";
+    return '<article class="profile-editor"><img src="' + escapeAttr(avatarSrc(player)) + '" alt="">' +
+      nameRow + modelRow + avatarButton + avatarInput + "</article>";
   }
 
   function renderSettingsPanel() {
@@ -440,7 +437,7 @@
     return (
       '<div class="modal-backdrop" data-close-settings="true"><section class="settings-panel glass" data-settings-stop="true">' +
       '<header class="panel-head"><div><span class="lobby-kicker">斗地主专属</span><h2>牌桌设置</h2></div><button class="close-button" type="button" data-close-settings-button="true">×</button></header>' +
-      '<section class="settings-section"><h3>头像与模型</h3><div class="profile-editor-list">' +
+      '<section class="settings-section"><h3>昵称、头像与模型</h3><div class="profile-editor-list">' +
       state.players.map(profileEditor).join("") + "</div></section>" +
       '<section class="settings-section"><h3>桌布</h3><div class="theme-picker">' + themeButton("jade", "粉喵键盘") + themeButton("sakura", "云朵软心") + themeButton("camp", "双熊挂饰") + themeButton("beach", "幸福双星") + "</div></section>" +
       '<section class="settings-section"><h3>声音</h3><label class="volume-row"><span>音乐</span><input type="range" min="0" max="1" step="0.01" value="' + musicVolume + '" data-music-volume="true"><output>' + Math.round(musicVolume * 100) + '%</output></label><label class="volume-row"><span>音效</span><input type="range" min="0" max="1" step="0.01" value="' + effectVolume + '" data-effect-volume="true"><output>' + Math.round(effectVolume * 100) + "%</output></label></section>" +
@@ -461,10 +458,10 @@
       phase: "lobby",
       theme: "jade",
       players: [
-        { id: "aurex", name: "小猫", kind: "human", avatar: LOCAL_AVATARS.aurex, totalScore: 0 },
-        { id: "aevi", name: "Aevi", kind: "cmd", avatar: LOCAL_AVATARS.aevi, totalScore: 0 },
-        { id: "vex", name: "Vex", kind: "cmd", avatar: LOCAL_AVATARS.vex, totalScore: 0 },
-        { id: "juhua", name: "菊花", kind: "cmd", avatar: LOCAL_AVATARS.juhua, totalScore: 0 },
+        { id: "aurex", name: "玩家", kind: "human", avatar: LOCAL_AVATARS.aurex, totalScore: 0 },
+        { id: "aevi", name: "对家甲", kind: "cmd", avatar: LOCAL_AVATARS.aevi, totalScore: 0 },
+        { id: "vex", name: "对家乙", kind: "cmd", avatar: LOCAL_AVATARS.vex, totalScore: 0 },
+        { id: "juhua", name: "对家丙", kind: "cmd", avatar: LOCAL_AVATARS.juhua, totalScore: 0 },
       ],
       leaderboard: [],
     };
@@ -474,7 +471,7 @@
     var players = state.players || [];
     var selectedNames = selectedAiIds.map(function (id) { return (players.find(function (player) { return player.id === id; }) || {}).name || id; });
     // 抬头跟着固定座位的昵称走：改昵称，这行也跟着改
-    var hostName = (playerById("aurex") || {}).name || "小猫";
+    var hostName = (playerById("aurex") || {}).name || "玩家";
     return (
       '<div class="game-shell"><section class="lobby"><div class="lobby-card glass"><span class="lobby-kicker">' + escapeHtml(hostName) + " × " + escapeHtml(selectedNames.join(" × ")) + '</span><h1>小机斗地主</h1><div class="lobby-players">' +
       players.map(function (player) {

@@ -7,7 +7,6 @@ import { ModelPlayerAdapter } from "./doudizhu-model-adapter.js";
 import {
   defaultSeatModel,
   normalizeSeatModel,
-  seatModelLabel,
   seatModelOptions,
   seatThinkMs,
 } from "./doudizhu-seat-models.js";
@@ -647,7 +646,7 @@ export class DoudizhuService {
       await this.addFeed({
         type: "adapter_error",
         playerId: "juhua",
-        text: "菊花入桌准备稍慢，裁判会继续托管。",
+        text: `${this.profile("juhua")?.name || "对家丙"}入桌准备稍慢，裁判会继续托管。`,
         detail: cleanText(error.message || error, 300),
       }, false);
     }
@@ -1183,8 +1182,6 @@ export class DoudizhuService {
       const model = cleanText(patch.model, 60);
       if (!options.includes(model)) throw new Error("这个座位不能选这个模型");
       profile.model = model;
-      // 牌桌上就按模型名认人——她本来就是拿昵称当模型名在用的
-      profile.name = seatModelLabel(playerId, model) || profile.name;
     }
     if (patch.avatarDataUrl) {
       const saved = await this.saveAvatar(playerId, patch.avatarDataUrl);
@@ -1235,7 +1232,7 @@ export class DoudizhuService {
   }
 
   async requestDissolve(playerId = "aurex") {
-    if (playerId !== "aurex") throw new Error("目前由 Aurex 发起解散");
+    if (playerId !== "aurex") throw new Error("只能由本座位发起解散");
     if (!this.state.match || !["bid", "play", "round_end"].includes(this.state.phase)) throw new Error("现在不能申请解散");
     this.clearTimers();
     const resumePhase = this.state.phase;
@@ -1254,7 +1251,7 @@ export class DoudizhuService {
       votes: Object.fromEntries(this.activePlayerIds().map((id) => [id, id === "aurex" ? "yes" : "pending"])),
       createdAt: nowIso(),
     };
-    await this.addFeed({ type: "dissolve_request", playerId, text: "Aurex 发起了解散申请。" }, false);
+    await this.addFeed({ type: "dissolve_request", playerId, text: `${this.profile(playerId)?.name || "玩家"} 发起了解散申请。` }, false);
     await this.saveState();
     this.broadcast();
     this.dissolveTimer = setTimeout(() => {
@@ -1267,6 +1264,7 @@ export class DoudizhuService {
   }
 
   dissolvePayload(playerId) {
+    const hostName = this.profile("aurex")?.name || "玩家";
     const aurexDissolveIntent = recentAurexDissolveIntent(this.state.feed);
     return {
       phase: "dissolve",
@@ -1281,8 +1279,8 @@ export class DoudizhuService {
         scores: this.state.match?.scoreDeltas,
       },
       prompt: aurexDissolveIntent
-        ? `Aurex 刚刚说「${aurexDissolveIntent}」，现在申请解散。请优先照顾她的现实事情并同意。`
-        : "Aurex 申请解散当前比赛。你是否同意？请由你本人决定。",
+        ? `${hostName}刚刚说「${aurexDissolveIntent}」，现在申请解散。请你决定是否同意。`
+        : `${hostName}申请解散当前比赛。你是否同意？请由你本人决定。`,
       context: { match_id: this.state.match?.id, deadline_at: this.state.dissolveVote?.deadlineAt },
     };
   }

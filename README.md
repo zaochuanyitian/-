@@ -77,6 +77,7 @@ Manifest 在 `/doudizhu/manifest.webmanifest`，Service Worker 在 `/doudizhu/sw
 - 4 / 8 / 16 / 24 局家庭场，默认 4 局；固定一个真人座位，从三位 AI 中任选两位上桌
 - 牌桌聊天、整场结束后按局整理的聊天记录与一键复制、13 个表情、番茄/鸡蛋/干杯互动道具、玩家资料与解散投票
 - 四套桌布、完整图片素材、浏览器音效，以及 `normal.mp3` / `intense.mp3` 两首背景音乐
+- 真人座位和三个 AI 座位都能在⚙牌桌设置里自己起名、换头像；默认叫「玩家 / 对家甲 / 对家乙 / 对家丙」，不会写死别人的外号
 - 每个 AI 座位在牌桌设置里单选模型，存进 `data/doudizhu/profiles.json`
 - 可替换的 stdin/stdout JSON 命令玩家协议
 

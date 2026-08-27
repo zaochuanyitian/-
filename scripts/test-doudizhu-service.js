@@ -96,7 +96,7 @@ class InteractionAdapter {
     await service.applyProp("aurex", "tomato", "aevi");
     await waitFor(() => service.state.feed.some((item) => item.type === "prop" && item.playerId === "aevi" && item.targetId === "aurex"));
     const interaction = adapter.calls.find((call) => call.payload.phase === "interaction");
-    assert.ok(interaction, "Aurex 扔道具后目标 AI 必须收到互动反应 payload");
+    assert.ok(interaction, "人扔道具后目标 AI 必须收到互动反应 payload");
     assert.equal(interaction.payload.direct_interaction.prop, "tomato");
     assert.ok(service.state.feed.some((item) => item.type === "chat" && item.playerId === "aevi" && item.text === "砸我？"));
   } finally {
@@ -142,7 +142,7 @@ async function cleanup(service, dataDir) {
     assert.equal(service.publicSnapshot("aurex").match.chatTranscript.length, 0, "整场结束前不应弹出结算聊天记录");
     service.state.phase = "match_end";
     const finalSnapshot = service.publicSnapshot("aurex");
-    assert.deepEqual(finalSnapshot.match.chatTranscript.map((item) => item.playerName), ["Aurex", "Aevi"]);
+    assert.deepEqual(finalSnapshot.match.chatTranscript.map((item) => item.playerName), ["玩家", "对家甲"]);
     const persisted = JSON.parse(await fs.readFile(path.join(dataDir, "state.json"), "utf8"));
     assert.equal(persisted.match.chatTranscript.length, 2, "聊天记录必须随牌局状态持久化");
   } finally {
@@ -315,7 +315,7 @@ async function cleanup(service, dataDir) {
     await service.requestDissolve("aurex");
     await waitFor(() => service.state.phase !== "dissolve_vote");
     await service.operationQueue;
-    assert.equal(service.state.phase, "lobby", "Aurex 明说有事先解散时 AI 应自动同意解散");
+    assert.equal(service.state.phase, "lobby", "人明说有事先解散时 AI 应自动同意解散");
     assert.ok(adapter.calls.every((call) => call.payload.phase !== "dissolve"), "明确有事先散时不应再把投票交给模型犟");
     assert.ok(service.state.feed.some((item) => item.type === "dissolved"));
   } finally {

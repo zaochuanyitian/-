@@ -1,11 +1,8 @@
 /**
  * 三个 AI 座位各自能选哪个模型。
  *
- * 小猫定的规矩（2026-08-08）：Sonnet 那一栏只给 sonnet，Opus 那一栏只给 opus，
- * 菊花那一栏就 Fable 5 一个。所以清单是**按座位**写死的，不是一个大列表 ——
- * 免得手一滑把 opus 那栏点成 haiku，那栏的意义就没了。
- *
- * id 跟 ChatNest 的 models.json 对齐，这样两边说的是同一个模型。
+ * 每个座位只给一族模型：甲栏 sonnet、乙栏 opus、丙栏 haiku。
+ * 清单按座位写死，避免一个座位滑到另一族。
  */
 
 export const SEAT_MODELS = {
