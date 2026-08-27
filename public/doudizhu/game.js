@@ -138,7 +138,7 @@
 
   function transcriptCopyText() {
     var items = matchTranscript();
-    var lines = ["家庭斗地主 · 本场聊天记录", "共 " + items.length + " 条"];
+    var lines = ["小机斗地主 · 本场聊天记录", "共 " + items.length + " 条"];
     var activeRound = 0;
     items.forEach(function (item) {
       var round = Math.max(1, Number(item.round) || 1);
@@ -476,7 +476,7 @@
     // 抬头跟着固定座位的昵称走：改昵称，这行也跟着改
     var hostName = (playerById("aurex") || {}).name || "小猫";
     return (
-      '<div class="game-shell"><section class="lobby"><div class="lobby-card glass"><span class="lobby-kicker">' + escapeHtml(hostName) + " × " + escapeHtml(selectedNames.join(" × ")) + '</span><h1>家庭斗地主</h1><div class="lobby-players">' +
+      '<div class="game-shell"><section class="lobby"><div class="lobby-card glass"><span class="lobby-kicker">' + escapeHtml(hostName) + " × " + escapeHtml(selectedNames.join(" × ")) + '</span><h1>小机斗地主</h1><div class="lobby-players">' +
       players.map(function (player) {
         var fixed = player.id === "aurex";
         var selected = fixed || selectedAiIds.indexOf(player.id) >= 0;

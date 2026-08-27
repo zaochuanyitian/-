@@ -1,7 +1,7 @@
 {
-  "name": "aevi-family-doudizhu",
+  "name": "xiaoji-doudizhu",
   "version": "1.0.0",
-  "description": "A realtime browser Dou Dizhu table with a deterministic referee engine and command-player adapters.",
+  "description": "小机斗地主：带实时裁判的浏览器斗地主牌桌",
   "type": "module",
   "scripts": {
     "start": "node src/server.js",

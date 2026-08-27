@@ -1,7 +1,7 @@
 {
   "id": "/doudizhu/",
-  "name": "Aevi 家庭斗地主",
-  "short_name": "斗地主",
+  "name": "小机斗地主",
+  "short_name": "小机斗地主",
   "description": "带实时裁判的浏览器斗地主牌桌",
   "lang": "zh-CN",
   "start_url": "/doudizhu/",

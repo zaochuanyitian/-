@@ -209,7 +209,7 @@ heartbeat.unref?.();
 
 server.listen(port, host, () => {
   const scheme = useTls ? "https" : "http";
-  console.log(`Aevi 家庭斗地主已启动：${scheme}://${host}:${port}/doudizhu/`);
+  console.log(`小机斗地主已启动：${scheme}://${host}:${port}/doudizhu/`);
 });
 
 function shutdown() {
