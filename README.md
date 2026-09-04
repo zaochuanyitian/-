@@ -123,5 +123,8 @@ npm test
 
 ## 许可
 
-程序代码和文档使用 MIT License。图片与音频的许可边界见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)，Kenney 音效许可保留在素材目录中。
-可二改禁二传，二改需要表明出处，以上为小猫和grok build共同编辑
+程序代码和文档按 [LICENSE](LICENSE) 走：源码可用（Source-Available），**不是开源** —— 可以自己看、自己跑、自己改着用；**禁止任何商业用途**，也禁止以商业为目的的二次转载／改版转载；任何公开使用、转载、演示、发帖、做视频，都**必须显著署名原作者并链回本仓库**。
+
+图片与音频不在本许可范围内，边界见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)，Kenney 音效许可保留在素材目录中。
+
+以上为小猫和grok build共同编辑

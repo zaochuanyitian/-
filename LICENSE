@@ -1,21 +1,123 @@
-MIT License
+Source-Available License — Non-Commercial, Attribution Required
+源码可用许可证 —— 禁止商用，署名强制
 
-Copyright (c) 2026 AurexloveU
+Copyright (c) 2026 zaochuanyitian (https://github.com/zaochuanyitian)
+All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+This project is SOURCE-AVAILABLE, not open source. The source is published so
+that people can read it, learn from it, and run it for themselves. Nothing here
+grants an open-source license such as MIT or Apache-2.0.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+------------------------------------------------------------------------------
+1. YOU MAY
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+   a. View, read, and study the source code.
+   b. Run the project for your own personal, non-commercial use.
+   c. Modify it for your own personal, non-commercial use.
+   d. Redistribute it, modified or unmodified, ONLY IF all of the following
+      hold: the redistribution is non-commercial, Section 3 (Attribution) is
+      satisfied, and this license is included unchanged.
+
+2. YOU MAY NOT
+
+   a. Use this project, in whole or in part, modified or unmodified, for any
+      commercial purpose. This includes selling it, bundling it into a paid
+      product or service, offering it as a hosted or ad-supported service,
+      using it in paid consulting deliverables, or any use whose purpose is to
+      generate revenue.
+   b. Re-upload, repost, mirror, or republish it — as-is or in a modified form
+      — for any commercial purpose, on any platform, under any account.
+   c. Sublicense, relicense, or otherwise place this project under different
+      terms.
+   d. Remove, hide, alter, or obscure the copyright notice, this license, or
+      the attribution required by Section 3.
+
+3. ATTRIBUTION IS REQUIRED (NOT OPTIONAL)
+
+   Any public use of this project or of anything derived from it — including
+   redistribution, demos, blog posts, videos, live streams, social media
+   content, tutorials, portfolios, and screenshots — must conspicuously credit
+   the original author and include a working link back to the original
+   repository.
+
+   Using this project to attract an audience, subscribers, or traffic while
+   omitting, burying, or misrepresenting its origin is expressly prohibited.
+
+4. NO ENDORSEMENT
+
+   Do not imply that the original author endorses, sponsors, or is affiliated
+   with your use, fork, or derivative work.
+
+5. THIRD-PARTY AND PLACEHOLDER ASSETS
+
+   Any public version of this project may use placeholder assets. Third-party
+   brand, logo, icon, font, media, or model assets are not covered by this
+   license and must be obtained separately under their own terms.
+
+6. NO WARRANTY
+
+   This project is provided "AS IS", without warranty of any kind, express or
+   implied, including but not limited to the warranties of merchantability,
+   fitness for a particular purpose, and non-infringement. In no event shall
+   the author be liable for any claim, damages, or other liability arising
+   from the use of this project.
+
+7. TERMINATION
+
+   Any breach of this license terminates the rights granted by it immediately
+   and automatically.
+
+8. OTHER USES
+
+   Any use not permitted above — commercial use in particular — requires prior
+   written permission from the author. Ask first.
+
+==============================================================================
+中文条款（与英文条款同等效力；两者冲突时以本中文条款为准）
+
+版权所有 (c) 2026 zaochuanyitian（https://github.com/zaochuanyitian）
+保留所有权利。
+
+本项目为「源码可用」（source-available），**不是开源项目**。公开源码是为了让人
+阅读、学习、自己跑起来用；这不构成 MIT、Apache-2.0 之类的开源授权。
+
+1. 你可以
+   a. 查看、阅读、研究源代码。
+   b. 出于个人非商业目的自行运行本项目。
+   c. 出于个人非商业目的自行修改本项目。
+   d. 转载或分发（原样或修改后），但必须同时满足：用途非商业、符合第 3 条署名
+      要求、并原样附带本许可证。
+
+2. 你不可以
+   a. 将本项目整体或部分、原样或修改后用于**任何商业用途**：售卖、打包进付费
+      产品或服务、做成收费或含广告的托管服务、作为付费交付物，或任何以营利为
+      目的的使用。
+   b. 出于商业目的在任何平台、任何账号下二次上传、二次转载、镜像或重新发布
+      本项目（原样和改版都算）。
+   c. 再许可、变更许可证，或以其他条款分发本项目。
+   d. 删除、隐藏、篡改或淡化版权声明、本许可证，以及第 3 条要求的署名。
+
+3. 署名是强制的（不是「鼓励」）
+   任何对本项目或其衍生物的公开使用 —— 包括转载、演示、博客、视频、直播、
+   社交媒体内容、教程、作品集、截图 —— 都必须**显著署名原作者**，并附上可点击
+   的原仓库链接。
+
+   利用本项目吸引观众、粉丝或流量，却隐去、淡化或谎报来源的行为，明确禁止。
+
+4. 不得暗示背书
+   不得让人以为原作者认可、赞助你的使用、你的 fork 或你的衍生作品，或与之有
+   任何关联。
+
+5. 第三方与占位素材
+   本项目的公开版本可能使用占位素材。第三方的品牌、logo、图标、字体、媒体或
+   模型素材不在本许可证范围内，需另行获取并遵守其各自条款。
+
+6. 免责
+   本项目按「现状」提供，不附带任何明示或默示的担保。作者不对因使用本项目而
+   产生的任何主张、损害或其他责任负责。
+
+7. 终止
+   一旦违反本许可证，其授予的全部权利立即自动终止。
+
+8. 其他用途
+   上述未明确许可的用途 —— 尤其是商业用途 —— 须事先取得作者书面许可。先来问。
